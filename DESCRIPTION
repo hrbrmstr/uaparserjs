@@ -3,8 +3,12 @@ Type: Package
 Title: Parse Browser 'User-Agent' Strings into Data Frames
 Version: 0.1.0
 Date: 2016-08-04
+Authors@R: c(
+    person("Bob", "Rudis", , "bob@rud.is", c("aut", "cre")),
+    person("Lindsey", "Simon", role = "aut", comment = "uap-core"),
+    person("Tobie", "Langel", role = "aut", comment = "uap-core"))
 Author: Bob Rudis (@hrbrmstr)
-Maintainer: Bob Rudis <bob@rudis.net>
+Maintainer: Bob Rudis <bob@rud.is>
 Description: Despite there being a section in RFC 7231
     <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested
     structure for 'User-Agent' headers this data is notoriously difficult
@@ -13,7 +17,7 @@ Description: Despite there being a section in RFC 7231
     based on the 'ua-parser' project <https://github.com/ua-parser>.
 URL: http://github.com/hrbrmstr/uaparserjs
 BugReports: https://github.com/hrbrmstr/uaparserjs/issues
-License: AGPL
+License: Apache License
 Suggests:
     testthat
 Depends:

@@ -4,10 +4,12 @@
 \alias{ua_parse}
 \title{Parse a vector of user agents into a data frame}
 \usage{
-ua_parse(user_agents)
+ua_parse(user_agents, .progress = FALSE)
 }
 \arguments{
 \item{user_agents}{a character vector of user agents}
+
+\item{.progress}{if \code{TRUE}, will display a progress bar in interactive mode}
 }
 \value{
 a \code{tibble} with columns for user agent family, major & minor versions
