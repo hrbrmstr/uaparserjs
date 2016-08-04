@@ -1,0 +1,49 @@
+---
+output: rmarkdown::github_document
+---
+
+`uaparserjs` : Parse Browser 'User-Agent' Strings into Data Frames
+
+Despite there being a section in RFC 7231 <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested structure for `User-Agent` headers this data is notoriously difficult to parse consistently. A function is provided that will take in user agent strings and return structured R objects. This is a V8-backed package based on the `ua-parser` project <https://github.com/ua-parser>.
+
+NOTE: there is a [C++-backed R package](https://github.com/ua-parser/uap-r) but it has [issues](https://github.com/ua-parser/uap-r/issues) compiling on a few platforms and is dependent upon Boost regex. This version is definitely slower but it works on all platforms.
+
+The following functions are implemented:
+
+- `ua_parse` : Parse a vector of user agents into a data frame
+
+### Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/uaparserjs")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r}
+library(uaparserjs)
+
+# current verison
+packageVersion("uaparserjs")
+
+dplyr::glimpse(ua_parse("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 Chrome/15.0.874.106 Safari/535.2"))
+
+dplyr::glimpse(ua_parse(readLines("tests/agents.txt")))
+
+```
+
+### Test Results
+
+```{r}
+library(uaparserjs)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+
