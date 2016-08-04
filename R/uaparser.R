@@ -4,6 +4,7 @@
 #' of parsed user agents.
 #'
 #' @param user_agents a character vector of user agents
+#' @param .progress if \code{TRUE}, will display a progress bar in interactive mode
 #' @export
 #' @return a \code{tibble} with columns for user agent family, major & minor versions
 #'     plus patch level along with os family and major & minor versions plus
@@ -14,9 +15,11 @@
 #' ua_parse(paste0("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, ",
 #'                 "like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 ",
 #'                 "Chrome/15.0.874.106 Safari/535.2", collapse=""))
-ua_parse <- function(user_agents) {
+ua_parse <- function(user_agents, .progress=FALSE) {
 
+  if (.progress) pb <- progress_estimated(length(user_agents))
   purrr::map_df(user_agents, function(x) {
+    if (.progress) pb$tick()$print()
     dplyr::as_data_frame(as.list(unlist(.pkgenv$ctx$call("parser.parse", x))))
   })
 
