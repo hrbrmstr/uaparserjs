@@ -1,15 +1,29 @@
 language: r
+cache: packages
+
+matrix:
+  include:
+    - os: linux
+      dist: precise
+      sudo: false
+    - os: linux
+      dist: trusty
+    - os: osx
+      osx_image: xcode8
+      brew_packages: v8-315
+      latex: false
+    - os: osx
+      osx_image: beta-xcode6.1
+      disable_homebrew: true
+      latex: false
+
+addons:
+  apt:
+    packages:
+      - libv8-dev
+
 warnings_are_errors: true
-sudo: required
-
-apt_packages:
- - binutils
- - libproj-dev
- - gdal-bin
-
-env:
- global:
-   - CRAN: http://cran.rstudio.com
+#r_check_revdep: true
 
 notifications:
   email:
