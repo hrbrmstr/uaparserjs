@@ -1,6 +1,7 @@
 ---
 output: rmarkdown::github_document
 ---
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs)
 
 `uaparserjs` : Parse Browser 'User-Agent' Strings into Data Frames
 
