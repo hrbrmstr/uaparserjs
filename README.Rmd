@@ -1,7 +1,7 @@
 ---
 output: rmarkdown::github_document
 ---
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs)
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/uaparserjs)](https://cran.r-project.org/package=uaparserjs) [![](http://cranlogs.r-pkg.org/badges/uaparserjs)](http://cran.rstudio.com/web/packages/uaparserjs/index.html)
 
 `uaparserjs` : Parse Browser 'User-Agent' Strings into Data Frames
 
