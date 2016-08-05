@@ -1,4 +1,6 @@
 
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs)
+
 `uaparserjs` : Parse Browser 'User-Agent' Strings into Data Frames
 
 Despite there being a section in RFC 7231 <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested structure for `User-Agent` headers this data is notoriously difficult to parse consistently. A function is provided that will take in user agent strings and return structured R objects. This is a V8-backed package based on the `ua-parser` project <https://github.com/ua-parser>.
@@ -71,7 +73,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Thu Aug  4 17:21:51 2016"
+    ## [1] "Thu Aug  4 22:41:09 2016"
 
 ``` r
 test_dir("tests/")
