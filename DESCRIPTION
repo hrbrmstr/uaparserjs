@@ -7,7 +7,6 @@ Authors@R: c(
     person("Bob", "Rudis", , "bob@rud.is", c("aut", "cre")),
     person("Lindsey", "Simon", role = "aut", comment = "uap-core"),
     person("Tobie", "Langel", role = "aut", comment = "uap-core"))
-Author: Bob Rudis (@hrbrmstr)
 Maintainer: Bob Rudis <bob@rud.is>
 Description: Despite there being a section in RFC 7231
     <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested
