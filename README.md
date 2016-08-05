@@ -1,5 +1,5 @@
 
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs)
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/uaparserjs)](https://cran.r-project.org/package=uaparserjs) [![](http://cranlogs.r-pkg.org/badges/uaparserjs)](http://cran.rstudio.com/web/packages/uaparserjs/index.html)
 
 `uaparserjs` : Parse Browser 'User-Agent' Strings into Data Frames
 
@@ -73,7 +73,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Thu Aug  4 22:41:09 2016"
+    ## [1] "Fri Aug  5 07:41:01 2016"
 
 ``` r
 test_dir("tests/")
@@ -83,3 +83,4 @@ test_dir("tests/")
     ## OK: 3 SKIPPED: 0 FAILED: 0
     ## 
     ## DONE ===================================================================================================================
+    ## You rock!
