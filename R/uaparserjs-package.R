@@ -5,5 +5,5 @@
 #' @author Bob Rudis (@@hrbrmstr)
 #' @importFrom purrr map map_df
 #' @import V8
-#' @importFrom dplyr as_data_frame
+#' @importFrom dplyr as_data_frame progress_estimated
 NULL

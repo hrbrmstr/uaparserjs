@@ -3,5 +3,6 @@
 export(ua_parse)
 import(V8)
 importFrom(dplyr,as_data_frame)
+importFrom(dplyr,progress_estimated)
 importFrom(purrr,map)
 importFrom(purrr,map_df)
