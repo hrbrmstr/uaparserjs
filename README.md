@@ -1,11 +1,14 @@
 
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/uaparserjs)](https://cran.r-project.org/package=uaparserjs) [![](http://cranlogs.r-pkg.org/badges/uaparserjs)](http://cran.rstudio.com/web/packages/uaparserjs/index.html)
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs)
 
+<!-- [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/uaparserjs)](https://cran.r-project.org/package=uaparserjs) [![](http://cranlogs.r-pkg.org/badges/uaparserjs)](http://cran.rstudio.com/web/packages/uaparserjs/index.html) -->
 `uaparserjs` : Parse Browser 'User-Agent' Strings into Data Frames
 
 Despite there being a section in RFC 7231 <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested structure for `User-Agent` headers this data is notoriously difficult to parse consistently. A function is provided that will take in user agent strings and return structured R objects. This is a V8-backed package based on the `ua-parser` project <https://github.com/ua-parser>.
 
 NOTE: there is a [C++-backed R package](https://github.com/ua-parser/uap-r) but it has [issues](https://github.com/ua-parser/uap-r/issues) compiling on a few platforms and is dependent upon Boost regex. This version is definitely slower but it works on all platforms.
+
+This was *briefly* on CRAN but the i386 Windows build of it has issues due to the limitations of the v8 engine (not the V8 package) in that environment. So, you're stuck with a github install until Oliver (and/or I) figure out how to get the C++-backed one working on all platforms.
 
 The following functions are implemented:
 
@@ -73,7 +76,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Fri Aug  5 07:41:01 2016"
+    ## [1] "Sun Aug  7 13:21:08 2016"
 
 ``` r
 test_dir("tests/")
@@ -83,4 +86,3 @@ test_dir("tests/")
     ## OK: 3 SKIPPED: 0 FAILED: 0
     ## 
     ## DONE ===================================================================================================================
-    ## You rock!
