@@ -20,7 +20,16 @@ ua_parse <- function(user_agents, .progress=FALSE) {
   if (.progress) pb <- progress_estimated(length(user_agents))
   purrr::map_df(user_agents, function(x) {
     if (.progress) pb$tick()$print()
-    dplyr::as_data_frame(as.list(unlist(.pkgenv$ctx$call("parser.parse", x))))
+    res <- .pkgenv$cache[[x]]
+    if (length(res) > 0) {
+      res
+    } else {
+      .pkgenv$cache[[x]] <- dplyr::as_data_frame(as.list(unlist(.pkgenv$ctx$call("parser.parse", x))))
+      .pkgenv$cache[[x]]
+    }
   })
 
 }
+
+#' @export
+get_cache <- function() { .pkgenv$cache }

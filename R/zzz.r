@@ -9,4 +9,8 @@
 
   assign("ctx", ctx, envir=.pkgenv)
 
+  cache <- list()
+
+  assign("cache", cache, envir=.pkgenv)
+
 }
