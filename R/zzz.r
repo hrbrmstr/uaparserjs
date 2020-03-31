@@ -1,7 +1,7 @@
 
 .pkgenv <- new.env(parent=emptyenv())
 
-.onAttach <- function(...) {
+.onLoad <- function(...) {
 
   ctx <- v8()
   ctx$source(system.file("js/bundle.js", package="uaparserjs"))
