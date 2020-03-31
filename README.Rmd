@@ -15,10 +15,7 @@ hrbrpkghelpr::stinking_badges()
 hrbrpkghelpr::yank_title_and_description()
 ```
 
-
 NOTE: there is a [C++-backed R package](https://github.com/ua-parser/uap-r) but it has [issues](https://github.com/ua-parser/uap-r/issues) compiling on a few platforms and is dependent upon Boost regex. This version is definitely slower but it works on all platforms.
-
-This was _briefly_ on CRAN but the i386 Windows build of it has issues due to the limitations of the v8 engine (not the V8 package) in that environment. So, you're stuck with a github install until Oliver (and/or I) figure out how to get the C++-backed one working on all platforms.
 
 ## What's Inside The Tin
 
