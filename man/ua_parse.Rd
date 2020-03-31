@@ -21,7 +21,7 @@ Takes in a character vector of user agent strings and returns a \code{tibble}
 of parsed user agents.
 }
 \note{
-The regex YAML import date: 2016-08-04
+The regex YAML import date: 2020-03-31
 }
 \examples{
 ua_parse(paste0("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, ",

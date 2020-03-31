@@ -10,7 +10,7 @@
 #'     plus patch level along with os family and major & minor versions plus
 #'     device brand and model.
 #' @references \url{http://www.uaparser.org/}
-#' @note The regex YAML import date: 2016-08-04
+#' @note The regex YAML import date: 2020-03-31
 #' @examples
 #' ua_parse(paste0("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, ",
 #'                 "like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 ",
