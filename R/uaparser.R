@@ -53,5 +53,6 @@ ua_parse <- function(user_agents, .progress=FALSE) {
 
 }
 
+#' @rdname ua_parse
 #' @export
 get_cache <- function() { .pkgenv$cache }

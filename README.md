@@ -51,6 +51,8 @@ The following functions are implemented:
 ## Installation
 
 ``` r
+install.packages("uaparserjs", repos = "https://cinc.rud.is")
+# or
 remotes::install_git("https://git.rud.is/hrbrmstr/uaparserjs.git")
 # or
 remotes::install_git("https://git.sr.ht/~hrbrmstr/uaparserjs")
@@ -70,7 +72,7 @@ NOTE: To use the ‘remotes’ install options you will need to have the
 ``` r
 library(uaparserjs)
 
-# current verison
+# current version
 packageVersion("uaparserjs")
 ## [1] '0.3.1'
 
@@ -112,8 +114,8 @@ microbenchmark::microbenchmark(
   ua_parse(batch_100)
 )
 ## Unit: milliseconds
-##                 expr      min      lq     mean   median       uq      max neval
-##  ua_parse(batch_100) 19.44652 20.2158 21.42222 20.66315 22.56606 31.78299   100
+##                 expr      min       lq   mean   median       uq      max neval
+##  ua_parse(batch_100) 19.68229 20.69247 22.213 21.62138 23.32668 35.13708   100
 ```
 
 ## uaparserjs Metrics

@@ -2,9 +2,12 @@
 % Please edit documentation in R/uaparser.R
 \name{ua_parse}
 \alias{ua_parse}
+\alias{get_cache}
 \title{Parse a vector of user agents into a data frame}
 \usage{
 ua_parse(user_agents, .progress = FALSE)
+
+get_cache()
 }
 \arguments{
 \item{user_agents}{a character vector of user agents}
