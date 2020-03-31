@@ -31,4 +31,3 @@ ua_parse(paste0("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, ",
 \references{
 \url{http://www.uaparser.org/}
 }
-

@@ -1,30 +1,37 @@
 ---
 output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: console
 ---
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs) 
+```{r pkg-knitr-opts, include=FALSE}
+hrbrpkghelpr::global_opts()
+```
 
-<!-- [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/uaparserjs)](https://cran.r-project.org/package=uaparserjs) [![](http://cranlogs.r-pkg.org/badges/uaparserjs)](http://cran.rstudio.com/web/packages/uaparserjs/index.html) -->
+```{r badges, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::stinking_badges()
+```
 
-`uaparserjs` : Parse Browser 'User-Agent' Strings into Data Frames
+```{r description, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::yank_title_and_description()
+```
 
-Despite there being a section in RFC 7231 <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested structure for `User-Agent` headers this data is notoriously difficult to parse consistently. A function is provided that will take in user agent strings and return structured R objects. This is a V8-backed package based on the `ua-parser` project <https://github.com/ua-parser>.
 
 NOTE: there is a [C++-backed R package](https://github.com/ua-parser/uap-r) but it has [issues](https://github.com/ua-parser/uap-r/issues) compiling on a few platforms and is dependent upon Boost regex. This version is definitely slower but it works on all platforms.
 
 This was _briefly_ on CRAN but the i386 Windows build of it has issues due to the limitations of the v8 engine (not the V8 package) in that environment. So, you're stuck with a github install until Oliver (and/or I) figure out how to get the C++-backed one working on all platforms.
 
+## What's Inside The Tin
+
 The following functions are implemented:
 
-- `ua_parse` : Parse a vector of user agents into a data frame
-
-### Installation
-
-```{r eval=FALSE}
-devtools::install_github("hrbrmstr/uaparserjs")
+```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::describe_ingredients()
 ```
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-options(width=120)
+## Installation
+
+```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::install_block()
 ```
 
 ### Usage
@@ -41,14 +48,13 @@ dplyr::glimpse(ua_parse(readLines("tests/agents.txt")))
 
 ```
 
-### Test Results
+## uaparserjs Metrics
 
-```{r}
-library(uaparserjs)
-library(testthat)
-
-date()
-
-test_dir("tests/")
+```{r cloc, echo=FALSE}
+cloc::cloc_pkg_md()
 ```
 
+## Code of Conduct
+
+Please note that this project is released with a Contributor Code of Conduct. 
+By participating in this project you agree to abide by its terms.

@@ -24,7 +24,7 @@ ua_parse <- function(user_agents, .progress=FALSE) {
     if (length(res) > 0) {
       res
     } else {
-      .pkgenv$cache[[x]] <- dplyr::as_data_frame(as.list(unlist(.pkgenv$ctx$call("parser.parse", x))))
+      .pkgenv$cache[[x]] <- dplyr::as_tibble(as.list(unlist(.pkgenv$ctx$call("parser.parse", x))))
       .pkgenv$cache[[x]]
     }
   })

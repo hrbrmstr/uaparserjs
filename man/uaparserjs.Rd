@@ -3,12 +3,7 @@
 \docType{package}
 \name{uaparserjs}
 \alias{uaparserjs}
-\alias{uaparserjs-package}
 \title{Parse Browser User Agent Strings into Data Frames}
-\description{
-Parse Browser User Agent Strings into Data Frames
-}
 \author{
 Bob Rudis (@hrbrmstr)
 }
-
