@@ -39,12 +39,20 @@ hrbrpkghelpr::install_block()
 ```{r}
 library(uaparserjs)
 
-# current verison
+# current version
 packageVersion("uaparserjs")
 
 dplyr::glimpse(ua_parse("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 Chrome/15.0.874.106 Safari/535.2"))
 
-dplyr::glimpse(ua_parse(readLines("tests/agents.txt")))
+agents <- readLines("tests/agents.txt")
+
+dplyr::glimpse(ua_parse(agents))
+
+set.seed(100)
+batch_100 <- sample(agents, 100)
+microbenchmark::microbenchmark(
+  ua_parse(batch_100)
+)
 
 ```
 

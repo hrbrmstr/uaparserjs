@@ -1,7 +1,7 @@
 Package: uaparserjs
 Type: Package
-Title: Parse Browser 'User-Agent' Strings into Data Frames
-Version: 0.3.0
+Title: Parse 'User-Agent' Strings
+Version: 0.3.1
 Date: 2020-03-31
 Authors@R: c(
     person("Bob", "Rudis", , "bob@rud.is", c("aut", "cre")),
@@ -12,19 +12,18 @@ Maintainer: Bob Rudis <bob@rud.is>
 Description: Despite there being a section in RFC 7231
     <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested
     structure for 'User-Agent' headers this data is notoriously difficult
-    to parse consistently. A function is provided that will take in user agent
+    to parse consistently. Tools are provided that will take in user agent
     strings and return structured R objects. This is a 'V8'-backed package
     based on the 'ua-parser' project <https://github.com/ua-parser>.
-URL: http://github.com/hrbrmstr/uaparserjs
-BugReports: https://github.com/hrbrmstr/uaparserjs/issues
-License: Apache License
+URL: https://git.rud.is/hrbrmstr/uaparserjs
+BugReports: https://gitlab.com/hrbrmstr/uaparserjs/issues
+License: Apache License 2.0 | file LICENSE
 Suggests:
     testthat
 Depends:
-    R (>= 3.0.0)
+    R (>= 3.2.0)
 Encoding: UTF-8
 Imports:
-    purrr,
-    dplyr,
+    progress,
     V8
 RoxygenNote: 7.1.0

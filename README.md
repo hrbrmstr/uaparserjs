@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-14%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs)
 [![Coverage
@@ -15,19 +15,19 @@ checks](https://cranchecks.info/badges/worst/uaparserjs)](https://cranchecks.inf
 [![CRAN
 status](https://www.r-pkg.org/badges/version/uaparserjs)](https://www.r-pkg.org/pkg/uaparserjs)
 ![Minimal R
-Version](https://img.shields.io/badge/R%3E%3D-3.0.0-blue.svg)
+Version](https://img.shields.io/badge/R%3E%3D-3.2.0-blue.svg)
 ![License](https://img.shields.io/badge/License-Apache-blue.svg)
 
 # uaparserjs
 
-Parse Browser ‘User-Agent’ Strings into Data Frames
+Parse ‘User-Agent’ Strings
 
 ## Description
 
 Despite there being a section in RFC 7231
 <https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested
 structure for ‘User-Agent’ headers this data is notoriously difficult to
-parse consistently. A function is provided that will take in user agent
+parse consistently. Tools are provided that will take in user agent
 strings and return structured R objects. This is a ‘V8’-backed package
 based on the ‘ua-parser’ project <https://github.com/ua-parser>.
 
@@ -51,7 +51,13 @@ The following functions are implemented:
 ## Installation
 
 ``` r
+remotes::install_git("https://git.rud.is/hrbrmstr/uaparserjs.git")
+# or
+remotes::install_git("https://git.sr.ht/~hrbrmstr/uaparserjs")
+# or
 remotes::install_gitlab("hrbrmstr/uaparserjs")
+# or
+remotes::install_bitbucket("hrbrmstr/uaparserjs")
 # or
 remotes::install_github("hrbrmstr/uaparserjs")
 ```
@@ -66,7 +72,7 @@ library(uaparserjs)
 
 # current verison
 packageVersion("uaparserjs")
-## [1] '0.3.0'
+## [1] '0.3.1'
 
 dplyr::glimpse(ua_parse("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 Chrome/15.0.874.106 Safari/535.2"))
 ## Observations: 1
@@ -81,7 +87,9 @@ dplyr::glimpse(ua_parse("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTM
 ## $ os.minor      <chr> "10"
 ## $ device.family <chr> "Other"
 
-dplyr::glimpse(ua_parse(readLines("tests/agents.txt")))
+agents <- readLines("tests/agents.txt")
+
+dplyr::glimpse(ua_parse(agents))
 ## Observations: 1,091
 ## Variables: 13
 ## $ userAgent     <chr> "Mozilla/5.0 (Windows; U; en-US) AppleWebKit/531.9 (KHTML, like Gecko) AdobeAIR/2.5.1", "Mozill…
@@ -97,14 +105,23 @@ dplyr::glimpse(ua_parse(readLines("tests/agents.txt")))
 ## $ os.minor      <chr> NA, NA, NA, NA, NA, "0", "2", "3", "3", "3", "0", "0", "0", "0", "0", NA, NA, NA, NA, "1", "0",…
 ## $ os.patch      <chr> NA, NA, NA, NA, NA, "3", "2", "3", "4", "5", "1", "3", "3", "3", "4", NA, NA, NA, NA, "1", "6",…
 ## $ os.patchMinor <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+
+set.seed(100)
+batch_100 <- sample(agents, 100)
+microbenchmark::microbenchmark(
+  ua_parse(batch_100)
+)
+## Unit: milliseconds
+##                 expr      min      lq     mean   median       uq      max neval
+##  ua_parse(batch_100) 19.44652 20.2158 21.42222 20.66315 22.56606 31.78299   100
 ```
 
 ## uaparserjs Metrics
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |        5 | 0.83 |  35 | 0.78 |          13 | 0.39 |       26 | 0.46 |
-| Rmd  |        1 | 0.17 |  10 | 0.22 |          20 | 0.61 |       30 | 0.54 |
+| R    |        6 | 0.86 | 202 | 0.93 |          94 | 0.81 |      125 | 0.81 |
+| Rmd  |        1 | 0.14 |  16 | 0.07 |          22 | 0.19 |       30 | 0.19 |
 
 ## Code of Conduct
 

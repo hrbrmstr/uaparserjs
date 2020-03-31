@@ -9,15 +9,15 @@ ua_parse(user_agents, .progress = FALSE)
 \arguments{
 \item{user_agents}{a character vector of user agents}
 
-\item{.progress}{if \code{TRUE}, will display a progress bar in interactive mode}
+\item{.progress}{if `TRUE`  will display a progress bar in interactive mode}
 }
 \value{
-a \code{tibble} with columns for user agent family, major & minor versions
-    plus patch level along with os family and major & minor versions plus
+a data frame classed as tibble with columns for user agent family, major & minor versions
+    plus patch level along with OS family and major & minor versions plus
     device brand and model.
 }
 \description{
-Takes in a character vector of user agent strings and returns a \code{tibble}
+Takes in a character vector of user agent strings and returns a data frame classed as tibble.
 of parsed user agents.
 }
 \note{
@@ -29,5 +29,5 @@ ua_parse(paste0("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, ",
                 "Chrome/15.0.874.106 Safari/535.2", collapse=""))
 }
 \references{
-\url{http://www.uaparser.org/}
+<http://www.uaparser.org/>
 }
