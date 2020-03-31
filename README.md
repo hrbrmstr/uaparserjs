@@ -8,6 +8,8 @@ by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keyb
 %](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/uaparserjs.svg?branch=master)](https://travis-ci.org/hrbrmstr/uaparserjs)
+[![Windows build
+status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/uaparserjs?svg=true)](https://ci.appveyor.com/project/hrbrmstr/uaparserjs)
 [![Coverage
 Status](https://codecov.io/gh/hrbrmstr/uaparserjs/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/uaparserjs)
 [![cran
@@ -36,11 +38,6 @@ package](https://github.com/ua-parser/uap-r) but it has
 [issues](https://github.com/ua-parser/uap-r/issues) compiling on a few
 platforms and is dependent upon Boost regex. This version is definitely
 slower but it works on all platforms.
-
-This was *briefly* on CRAN but the i386 Windows build of it has issues
-due to the limitations of the v8 engine (not the V8 package) in that
-environment. So, you’re stuck with a github install until Oliver (and/or
-I) figure out how to get the C++-backed one working on all platforms.
 
 ## What’s Inside The Tin
 
@@ -114,16 +111,16 @@ microbenchmark::microbenchmark(
   ua_parse(batch_100)
 )
 ## Unit: milliseconds
-##                 expr      min       lq   mean   median       uq      max neval
-##  ua_parse(batch_100) 19.68229 20.69247 22.213 21.62138 23.32668 35.13708   100
+##                 expr      min       lq     mean   median       uq      max neval
+##  ua_parse(batch_100) 19.66107 20.67153 22.06354 21.40268 22.99938 32.14979   100
 ```
 
 ## uaparserjs Metrics
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |        6 | 0.86 | 202 | 0.93 |          94 | 0.81 |      125 | 0.81 |
-| Rmd  |        1 | 0.14 |  16 | 0.07 |          22 | 0.19 |       30 | 0.19 |
+| R    |        6 | 0.86 |  83 | 0.84 |          39 | 0.66 |       34 | 0.54 |
+| Rmd  |        1 | 0.14 |  16 | 0.16 |          20 | 0.34 |       29 | 0.46 |
 
 ## Code of Conduct
 
