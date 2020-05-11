@@ -1,10 +1,9 @@
 npm install --save-dev yaml base-64 uap-ref-impl
 
 const fs = require('fs')
-const YAML = require('yaml') 
+const YAML = require('yaml')
 const file = fs.readFileSync('regexes.yaml', 'utf8')
 fs.writeFileSync('regexes.json', JSON.stringify(YAML.parse(file)))
-
 
 base64 -e regexes.json  > regexes.b64
 

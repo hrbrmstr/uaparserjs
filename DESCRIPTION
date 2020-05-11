@@ -1,8 +1,8 @@
 Package: uaparserjs
 Type: Package
 Title: Parse 'User-Agent' Strings
-Version: 0.3.1
-Date: 2020-03-31
+Version: 0.3.5
+Date: 2020-05-11
 Authors@R: c(
     person("Bob", "Rudis", , "bob@rud.is", c("aut", "cre")),
     person("Lindsey", "Simon", role = "aut", comment = "uap-core"),
@@ -15,15 +15,15 @@ Description: Despite there being a section in RFC 7231
     to parse consistently. Tools are provided that will take in user agent
     strings and return structured R objects. This is a 'V8'-backed package
     based on the 'ua-parser' project <https://github.com/ua-parser>.
-URL: https://git.rud.is/hrbrmstr/uaparserjs
+URL: https://gitlab.comhrbrmstr/uaparserjs
 BugReports: https://gitlab.com/hrbrmstr/uaparserjs/issues
 License: Apache License 2.0 | file LICENSE
-Suggests:
+Suggests: 
     testthat
-Depends:
-    R (>= 3.2.0)
+Depends: 
+    R (>= 3.5.0)
 Encoding: UTF-8
-Imports:
+Imports: 
     progress,
     V8
 RoxygenNote: 7.1.0

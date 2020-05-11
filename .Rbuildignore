@@ -6,3 +6,5 @@
 ^NOTES\.*Rmd$
 ^NOTES\.*html$
 ^cran-comments\.md$
+^appveyor\.yml$
+^CRAN-RELEASE$

@@ -17,7 +17,7 @@ checks](https://cranchecks.info/badges/worst/uaparserjs)](https://cranchecks.inf
 [![CRAN
 status](https://www.r-pkg.org/badges/version/uaparserjs)](https://www.r-pkg.org/pkg/uaparserjs)
 ![Minimal R
-Version](https://img.shields.io/badge/R%3E%3D-3.2.0-blue.svg)
+Version](https://img.shields.io/badge/R%3E%3D-3.5.0-blue.svg)
 ![License](https://img.shields.io/badge/License-Apache-blue.svg)
 
 # uaparserjs
@@ -48,7 +48,7 @@ The following functions are implemented:
 ## Installation
 
 ``` r
-install.packages("uaparserjs", repos = "https://cinc.rud.is")
+install.packages("uaparserjs", repos = c("https://cinc.rud.is", "https://cloud.r-project.org/"))
 # or
 remotes::install_git("https://git.rud.is/hrbrmstr/uaparserjs.git")
 # or
@@ -71,11 +71,11 @@ library(uaparserjs)
 
 # current version
 packageVersion("uaparserjs")
-## [1] '0.3.1'
+## [1] '0.3.5'
 
 dplyr::glimpse(ua_parse("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 Chrome/15.0.874.106 Safari/535.2"))
-## Observations: 1
-## Variables: 9
+## Rows: 1
+## Columns: 9
 ## $ userAgent     <chr> "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Ubuntu/11.10 Chromium/15…
 ## $ ua.family     <chr> "Chromium"
 ## $ ua.major      <chr> "15"
@@ -86,11 +86,11 @@ dplyr::glimpse(ua_parse("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTM
 ## $ os.minor      <chr> "10"
 ## $ device.family <chr> "Other"
 
-agents <- readLines("tests/agents.txt")
+agents <- readLines(system.file("extdat", "agents.txt", package = "uaparserjs"))
 
 dplyr::glimpse(ua_parse(agents))
-## Observations: 1,091
-## Variables: 13
+## Rows: 1,091
+## Columns: 13
 ## $ userAgent     <chr> "Mozilla/5.0 (Windows; U; en-US) AppleWebKit/531.9 (KHTML, like Gecko) AdobeAIR/2.5.1", "Mozill…
 ## $ ua.family     <chr> "AdobeAIR", "Amazon Silk", "Amazon Silk", "Amazon Silk", "Amazon Silk", "Amazon Silk", "Android…
 ## $ ua.major      <chr> "2", "1", "2", "2", "2", "3", "2", "2", "2", "2", "3", "4", "4", "4", "4", "1", "1", "6", "7", …
@@ -112,15 +112,15 @@ microbenchmark::microbenchmark(
 )
 ## Unit: milliseconds
 ##                 expr      min       lq     mean   median       uq      max neval
-##  ua_parse(batch_100) 19.66107 20.67153 22.06354 21.40268 22.99938 32.14979   100
+##  ua_parse(batch_100) 708.7338 721.5558 737.8894 730.8626 742.9891 928.1393   100
 ```
 
 ## uaparserjs Metrics
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |        6 | 0.86 |  83 | 0.84 |          39 | 0.66 |       34 | 0.54 |
-| Rmd  |        1 | 0.14 |  16 | 0.16 |          20 | 0.34 |       29 | 0.46 |
+| R    |        5 | 0.83 |  72 | 0.82 |          37 | 0.65 |       34 | 0.54 |
+| Rmd  |        1 | 0.17 |  16 | 0.18 |          20 | 0.35 |       29 | 0.46 |
 
 ## Code of Conduct
 
