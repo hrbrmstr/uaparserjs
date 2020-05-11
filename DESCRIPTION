@@ -15,7 +15,7 @@ Description: Despite there being a section in RFC 7231
     to parse consistently. Tools are provided that will take in user agent
     strings and return structured R objects. This is a 'V8'-backed package
     based on the 'ua-parser' project <https://github.com/ua-parser>.
-URL: https://gitlab.comhrbrmstr/uaparserjs
+URL: https://gitlab.com/hrbrmstr/uaparserjs
 BugReports: https://gitlab.com/hrbrmstr/uaparserjs/issues
 License: Apache License 2.0 | file LICENSE
 Suggests: 
